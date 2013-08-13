@@ -66,7 +66,7 @@ app.use(middleware.csrf({
     '/api/.+'
   ]
 }));
-app.use(middleware.cors({ whitelist: ['/_badges.*', '/issuer.*', '/baker', '/displayer/.+/group.*'] }));
+app.use(middleware.cors({ whitelist: ['/_badges.*', '/issuer.*', '/baker', '/displayer/.+/(?:email|group.*)'] }));
 app.use(app.router);
 app.use(middleware.notFound());
 app.configure('development', function () {
